@@ -1,30 +1,45 @@
 # PRD Creator - Reglas y Contexto del Proyecto
 
 ## Propósito del Proyecto
-Este es un sistema para crear y gestionar PRDs (Product Requirements Documents) de manera estructurada. El proyecto organiza la información en briefs, conocimiento base y documentos de requisitos.
+Este es un sistema para crear y gestionar PRDs (Product Requirements Documents) de manera estructurada. El proyecto organiza la información en conocimiento base y documentos de requisitos.
 
 ## Estructura del Proyecto
-- `how-to/`: Contiene guías y reglas para trabajar con briefs y proyectos
+- `how-to/`: Contiene guías y reglas para trabajar con proyectos
 - `knowledge/`: Base de conocimiento del proyecto/producto (base-of-knowledge.md)
 - `projects/{project-name}/`: Cada proyecto tiene su propia carpeta con:
-  - `brief/`: Documentos de brief del proyecto
-  - `prd/`: Documentos PRD generados
+  - `prd/`: Documentos PRD generados como archivos Markdown (`.md`)
 
 ## Qué se Espera en este Proyecto
-
-### Al trabajar con Briefs
-- Los briefs deben ubicarse en `projects/{project-name}/brief/`
-- Deben seguir un formato claro y estructurado
-- Consulta `how-to/howto-brief.md` para las reglas específicas
 
 ### Al trabajar con Proyectos
 - Cada proyecto debe tener su propia carpeta en `projects/`
 - Consulta `how-to/howto-project.md` para las reglas de gestión de proyectos
 
+### Cómo Obtener el Project Brief de un Proyecto de Linear
+
+Cuando necesites obtener el Project Brief asociado a un proyecto de Linear, sigue este proceso:
+
+1. **Obtener el proyecto de Linear:**
+   - Usa `mcp_linear_get_project` con el nombre o ID del proyecto, o
+   - Usa `mcp_linear_list_projects` con un query para buscar el proyecto
+   - Guarda el `id` del proyecto obtenido
+
+2. **Listar documentos del proyecto:**
+   - Usa `mcp_linear_list_documents` con el parámetro `projectId` del proyecto
+   - Esto te devolverá todos los documentos asociados al proyecto, incluyendo el "Project Brief"
+
+3. **Obtener el contenido del Project Brief:**
+   - Identifica el documento con título "Project Brief" en la lista de documentos
+   - Usa `mcp_linear_get_document` con el `id` del documento para obtener su contenido completo
+
+**Nota importante:** El Project Brief NO está en la descripción del proyecto (`description`), sino que es un documento separado asociado al proyecto. Siempre debes usar `mcp_linear_list_documents` para encontrarlo.
+
 ### Al generar PRDs
-- Los PRDs deben generarse en `projects/{project-name}/prd/`
-- Deben basarse en el brief correspondiente y la base de conocimiento
+- Los PRDs deben generarse como archivos Markdown (`.md`) en `projects/{project-name}/prd/`
+- El nombre del archivo debe seguir el formato: `prd.md` o `{nombre-descriptivo}.md`
+- Deben basarse en la base de conocimiento
 - Deben ser documentos completos y estructurados
+- Consulta `how-to/howto-prd.md` para las reglas específicas de creación de PRDs
 
 ## Base de Conocimiento
 - Siempre consulta `knowledge/base-of-knowledge.md` para entender el contexto del producto/proyecto
@@ -50,17 +65,6 @@ Cuando el usuario solicite crear un nuevo proyecto, debes seguir este flujo de m
 1. Una vez que hayas verificado que `howto-project.md` se ha cumplido, **debes pedir confirmación explícita al usuario** antes de crear el proyecto en Linear
 2. Presenta un resumen de lo que se va a crear y espera la confirmación del usuario
 3. Solo después de recibir confirmación explícita, procede a crear el proyecto en Linear
-
-### Paso 3: Seguir howto-brief.md de Manera Conversacional
-1. Una vez creado el proyecto en Linear, **debes seguir `how-to/howto-brief.md` de manera conversacional con el usuario**
-2. Guía al usuario a través de todos los pasos y requisitos definidos en `howto-brief.md`
-3. Mantén una conversación fluida y natural mientras cumples con todas las reglas del brief
-4. No procedas al siguiente paso hasta que consideres que todas las reglas de `howto-brief.md` se han cumplido completamente
-
-### Paso 4: Confirmación para Actualizar Valores en Linear
-1. Una vez que hayas verificado que `howto-brief.md` se ha cumplido, **debes pedir confirmación explícita al usuario** antes de actualizar los valores en Linear
-2. Presenta un resumen de los valores que se van a actualizar y espera la confirmación del usuario
-3. Solo después de recibir confirmación explícita, procede a actualizar los valores en Linear
 
 ### Reglas del Flujo
 - **NUNCA** omitas ningún paso del flujo
