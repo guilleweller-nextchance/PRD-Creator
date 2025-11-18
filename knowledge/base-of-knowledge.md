@@ -1,0 +1,101 @@
+**🗓️ Actualización 16 Oct**
+
+- Se trata de una plataforma centrada en la creación y visualización de rankings.
+- Las vistas principales son:
+    - Home
+    - Detalle de Ranking
+    - Detalle de Participante
+- Los participantes son los elementos de un ranking, pueden ser personas, objetos, lugares, etc
+- Los rankings se ordenan por los votos de los usuarios, siendo el principal atractivo el consumir un ranking como información para la toma de decisión o para aportar un voto como usuario
+- En los rankings, los participantes se representan en una card con la siguiente información:
+    - Imagen o video representativo
+    - Carrusel de imagenes / videos
+    - Posición en el ranking
+    - Nombre
+    - Tipología del participante
+    - Número de votos de BillionHands
+    - Número de Votos del mundo
+        - Los votos del mundo son una estimación obtenida por IA de cuánto se habla de un participante en internet de manera positiva
+    - Botón de votar (o indicador visual si ya se ha votado a ese participante)
+    - Descripción breve denominada "rankingReason", que explica el motivo de su inclusión, cortada con un Ver Más
+    - Un PRO (de pros y contras, pero nosotros no mostramos contras) principal del participante
+        - Son PROs relacionados con el contexto del ranking
+    - Un indicador de que hay más PROs a mostrar (+3)
+    - Un botón de Ver Más que amplia la rankingReason, deja ver todos los PROs y revela un enlace para ir al Detalle del Participante
+    - Enlace a la ficha de Detalle del Participante
+- En un ranking el usuario puede
+    - Emitir votos por participante
+    - Añadir nuevos participantes
+    - Compartir el ranking
+
+- Los votos son por usuario, los usuarios NO registrados pueden emitir hasta 3 votos en cualquier ranking hasta que se les pide un registro obligatorio.
+    - Un usuario, actualmente, puede emitir 3 votos sin registrarse. Son votos que no se contabilizan en la base de datos, solo visualmente en la sesión del usuario votante. Una vez se registra se convierten en votos reales y pasan a la base de datos.
+- Los usuarios pueden votar a cualquier participante sin límite dentro de un ranking (salvo el límite de 3 para NO registrados)
+- Actualmente, el registro en la versión web puede realizarse mediante:Número de teléfono
+    - Cuenta de Google
+    - Cuenta de Apple
+    - Usuario y contraseña
+- En el navegador interno de Instagram (webview), el registro está limitado a:
+    - Número de teléfono
+    - Usuario y contraseña
+- Durante la creación del ranking, se tienen filtros y limitadores para:
+    - Contenido NSFW, contenido inapropiado y lenguaje ofensivo.
+    - Todos los rankings deben mantener un enfoque positivo
+    - No se permite la creación de rankings con connotaciones negativas.
+- La creación del ranking comienza con un chatbot que te orienta en la creación del mismo y te sugiere unos candidatos iniciales.
+- La inteligencia artificial también se encarga de buscar participantes ya existentes para evitar duplicados en la base de datos.
+- A la hora de añadir un participante, se le pide al usuario que introduzca una cadena de texto y se muestran hasta tres sugerencias, seleccionadas en función de su entrada de texto y del contexto proporcionado por el título del ranking (por ejemplo, si se introduce "Golf" en un ranking de coches, aparecerá el modelo de automóvil; si es en deportes, se mostrará el deporte).
+- Una vez creado un ranking, este entra en un estado de borrador en el que se pueden:
+    - Añadir o eliminar participantes
+    - Agregar nuevos participantes
+- Los participantes disponen de una ficha individual generada mediante inteligencia artificial la primera vez que se accede a ella.
+- Esta ficha incluye información externa en modo de link: compra, wikipedia, tiktok, instagram, etc
+- En la vista de detalle de un participante se muestra:
+    - Imagen(s) o video(s) representativo como portada
+    - Botón para compartir
+    - Nombre del participante
+    - Tipología del participante (por ejemplo, personaje, película, destino turístico, etc.)
+    - Descripción extensa del participante
+    - Componente que indica otros rankings en los que aparece
+    - Los PROs asociados al participante de manera genérica
+    - Un componente de comparador de precios (que no actualiza los precios, solo se pide una vez se crea el participante)
+    - Rankings similares
+- Una vez publicado, el ranking ya no se puede modificar.
+- Todos los rankings se organizan bajo categorías, determinadas mediante análisis por inteligencia artificial
+- Al acceder a un ranking, se muestra el número actual de votos, así como el nombre y la imagen del usuario que lo creó
+- La página principal de la plataforma contiene:
+    - Sección de "Trending", con 20 rankings preseleccionados, de los cuales se mostrarán aleatoriamente 4
+    - Categorías fijas predefinidas, ordenadas por
+        - Billion Rankings promocionados (ordenados por votos)
+        - Billion Rankings (ordenados por votos)
+        - Resto de rankings (ordenados por votos)
+    - Un grid con otros rankings
+- Actualmente, la mayor parte del tráfico proviene de campañas pagadas.
+- Se denomina Billion Ranking a rankings con un bajo CPM y un alto CTR con buenas métricas internas. Pueden estar esponsorizados o no.
+- En la versión móvil, se presenta una barra inferior con las siguientes opciones:
+    - Inicio
+    - Buscar
+    - Crear
+    - Mis Rankings
+    - Perfil
+- El perfil del usuario no es visible para otros usuarios.
+- El usuario puede editar su información personal en todo momento en su página de perfil.
+- El **username** del usuario es único para cada usuario.
+
+**🎯 Programa de Puntos (MVP)**
+
+- Sistema de recompensas con Puntos BH convertibles a dinero real en el futuro (ratio pendiente de definir).
+- Los usuarios pueden acumular puntos sin registrarse (usuario temporal), y al registrarse se transfieren los puntos acumulados + 50 puntos bonus (solo para nuevos usuarios, no aplica a login de usuarios existentes).
+- Sistema de 6 misiones independientes:
+    - **4 misiones simples con límite diario** (reseteo cada 24h): votar N veces, visitar N rankings, compartir N rankings, hacer clickout N veces (N = 5-10, valor a definir).
+    - **1 misión combinada por BR Patrocinado** (única, no repetible): completar votar + compartir + clickout en el mismo BR Patrocinado para ganar 200 puntos.
+    - **1 misión de registro** (única por usuario): 50 puntos al validar email tras crear cuenta nueva.
+- Sistema de puntos diferenciado por tipo de ranking:
+    - Ranking Normal: 1 punto por acción completada.
+    - Billion Ranking (patrocinado o no): 3 puntos por acción completada.
+    - BR Patrocinado: misión combinada de 200 puntos (además de los 3 puntos por cada acción individual).
+- En Billion Rankings Patrocinados hay una experiencia especial:
+    - Animación de confeti al entrar.
+    - Indicador de progreso visible: "0/3 acciones para ganar 200 puntos" que se actualiza en tiempo real.
+    - Al completar la misión combinada, el indicador muestra "3/3 - ¡Misión completada!" de forma permanente.
+- Los puntos se muestran en la UI con su balance total y equivalencia en euros, con comunicación clara sobre redención futura.

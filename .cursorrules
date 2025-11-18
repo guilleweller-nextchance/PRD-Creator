@@ -1,0 +1,70 @@
+# PRD Creator - Reglas y Contexto del Proyecto
+
+## Propósito del Proyecto
+Este es un sistema para crear y gestionar PRDs (Product Requirements Documents) de manera estructurada. El proyecto organiza la información en briefs, conocimiento base y documentos de requisitos.
+
+## Estructura del Proyecto
+- `how-to/`: Contiene guías y reglas para trabajar con briefs y proyectos
+- `knowledge/`: Base de conocimiento del proyecto/producto (base-of-knowledge.md)
+- `projects/{project-name}/`: Cada proyecto tiene su propia carpeta con:
+  - `brief/`: Documentos de brief del proyecto
+  - `prd/`: Documentos PRD generados
+
+## Qué se Espera en este Proyecto
+
+### Al trabajar con Briefs
+- Los briefs deben ubicarse en `projects/{project-name}/brief/`
+- Deben seguir un formato claro y estructurado
+- Consulta `how-to/howto-brief.md` para las reglas específicas
+
+### Al trabajar con Proyectos
+- Cada proyecto debe tener su propia carpeta en `projects/`
+- Consulta `how-to/howto-project.md` para las reglas de gestión de proyectos
+
+### Al generar PRDs
+- Los PRDs deben generarse en `projects/{project-name}/prd/`
+- Deben basarse en el brief correspondiente y la base de conocimiento
+- Deben ser documentos completos y estructurados
+
+## Base de Conocimiento
+- Siempre consulta `knowledge/base-of-knowledge.md` para entender el contexto del producto/proyecto
+- Esta base de conocimiento contiene información actualizada sobre el producto, sus características y reglas de negocio
+
+## Reglas Generales
+- Mantén la estructura de carpetas establecida
+- Sigue las guías en `how-to/` para cualquier tarea relacionada
+- Usa la base de conocimiento como referencia principal para el contexto del producto
+- Los documentos deben estar en español
+- Mantén un formato consistente y profesional en todos los documentos
+
+## Flujo para Crear un Nuevo Proyecto
+
+Cuando el usuario solicite crear un nuevo proyecto, debes seguir este flujo de manera estricta:
+
+### Paso 1: Consultar y Seguir howto-project.md
+1. **Consulta `how-to/howto-project.md`** y sigue todas sus reglas al pie de la letra
+2. Asegúrate de cumplir todos los requisitos y pasos definidos en ese documento
+3. No procedas al siguiente paso hasta que consideres que todas las reglas de `howto-project.md` se han cumplido completamente
+
+### Paso 2: Confirmación para Crear Proyecto en Linear
+1. Una vez que hayas verificado que `howto-project.md` se ha cumplido, **debes pedir confirmación explícita al usuario** antes de crear el proyecto en Linear
+2. Presenta un resumen de lo que se va a crear y espera la confirmación del usuario
+3. Solo después de recibir confirmación explícita, procede a crear el proyecto en Linear
+
+### Paso 3: Seguir howto-brief.md de Manera Conversacional
+1. Una vez creado el proyecto en Linear, **debes seguir `how-to/howto-brief.md` de manera conversacional con el usuario**
+2. Guía al usuario a través de todos los pasos y requisitos definidos en `howto-brief.md`
+3. Mantén una conversación fluida y natural mientras cumples con todas las reglas del brief
+4. No procedas al siguiente paso hasta que consideres que todas las reglas de `howto-brief.md` se han cumplido completamente
+
+### Paso 4: Confirmación para Actualizar Valores en Linear
+1. Una vez que hayas verificado que `howto-brief.md` se ha cumplido, **debes pedir confirmación explícita al usuario** antes de actualizar los valores en Linear
+2. Presenta un resumen de los valores que se van a actualizar y espera la confirmación del usuario
+3. Solo después de recibir confirmación explícita, procede a actualizar los valores en Linear
+
+### Reglas del Flujo
+- **NUNCA** omitas ningún paso del flujo
+- **SIEMPRE** pide confirmación explícita antes de crear o actualizar en Linear
+- **SIEMPRE** consulta y sigue los documentos `how-to/` antes de proceder
+- Mantén una comunicación clara y transparente con el usuario en cada paso
+
