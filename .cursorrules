@@ -142,12 +142,11 @@ Una vez localizado el proyecto, **debes seguir estrictamente el proceso document
    - Consulta `prd-prod.md` para las reglas específicas sobre qué preguntar
 
 3. **Generar el PRD** (Paso 3 de `howto-prd.md`):
-   - Basándote en el Project Brief, respuestas del usuario, entendimiento del código del repositorio y reglas de los 3 documentos de referencia
+   - Basándote en el Project Brief, respuestas del usuario, entendimiento del código del repositorio y reglas de los 2 documentos de referencia
    - Genera un PRD completo siguiendo la estructura definida en `howto-prd.md`
    - **Cada sección debe seguir las reglas de su documento de referencia correspondiente:**
-     - Secciones 1, 2, 3, 5, 8, 9, 10 → `prd-prod.md`
-     - Secciones 4, 7 → `prd-tech.md`
-     - Sección 6 → `prd-design.md`
+     - Secciones 1, 2, 3, 4, 5, 6, 7, 8 → `prd-prod.md`
+     - Sección 5 → `prd-design.md`
 
 4. **Guardar el PRD localmente**:
    - Guarda el PRD directamente en `projects/` con el formato `prd-{nombre-proyecto-resumido}.md`

@@ -7,9 +7,8 @@ Este documento contiene las reglas y guías para crear PRDs (Product Requirement
 
 Para crear un PRD completo, se deben consultar y seguir las reglas definidas en los siguientes documentos:
 
-- **`how-to/prd-prod.md`**: Reglas y guías desde la perspectiva de Producto (secciones 1, 2, 3, 5, 8, 9, 10)
-- **`how-to/prd-tech.md`**: Reglas y guías desde la perspectiva técnica (secciones 4, 7)
-- **`how-to/prd-design.md`**: Reglas y guías desde la perspectiva de Diseño (sección 6)
+- **`how-to/prd-prod.md`**: Reglas y guías desde la perspectiva de Producto (secciones 1, 2, 3, 4, 5, 6, 7, 8)
+- **`how-to/prd-design.md`**: Reglas y guías desde la perspectiva de Diseño (sección 5)
 
 ## Proceso de Creación de PRD
 
@@ -54,7 +53,7 @@ Basándote en:
 - El Project Brief obtenido
 - Las respuestas del usuario a las preguntas clarificadoras
 - El entendimiento del código del repositorio de Billionhands
-- Las reglas de los 3 documentos de referencia
+- Las reglas de los 2 documentos de referencia
 
 Genera un PRD completo usando la estructura definida a continuación.
 
@@ -81,38 +80,30 @@ El PRD debe seguir esta estructura de formato Markdown:
 
 [Contenido de las user stories]
 
-## 4. Requisitos Funcionales
-
-[Contenido de los requisitos funcionales]
-
-## 5. No-Goals (Fuera de Alcance)
+## 4. No-Goals (Fuera de Alcance)
 
 [Contenido de los no-goals]
 
-## 6. Consideraciones de Diseño
+## 5. Consideraciones de Diseño
 
 [Contenido de las consideraciones de diseño]
 
-## 7. Consideraciones Técnicas
-
-[Contenido de las consideraciones técnicas]
-
-## 8. Métricas de Éxito
+## 6. Métricas de Éxito
 
 [Contenido de las métricas de éxito]
 
-## 9. Riesgos y Mitigadores
+## 7. Riesgos y Mitigadores
 
 [Contenido de riesgos y mitigadores]
 
-## 10. Preguntas Abiertas
+## 8. Preguntas Abiertas
 
 [Contenido de preguntas abiertas]
 ```
 
 **Reglas de formato:**
 - Usa `#` para el título principal del PRD
-- Usa `##` para cada sección numerada (1-10)
+- Usa `##` para cada sección numerada (1-8)
 - Usa listas con viñetas (`-`) o numeradas (`1.`) según corresponda
 - Usa **negrita** para énfasis en términos importantes
 - Usa `código` para referencias técnicas, nombres de archivos, o comandos
@@ -136,46 +127,33 @@ El PRD debe seguir esta estructura de formato Markdown:
 - Detalla las narrativas de usuario que describen el uso de la funcionalidad y sus beneficios
 - Formato sugerido: "Como [tipo de usuario], quiero [acción] para [beneficio]"
 
-### 4. Requisitos Funcionales
-- **Documento de referencia:** `prd-tech.md`
-- **Formato:** Sección con `## 4. Requisitos Funcionales`
-- Lista las funcionalidades específicas que la feature debe tener
-- Usa lenguaje claro y conciso (ej: "El sistema debe permitir a los usuarios subir una foto de perfil")
-- Numera estos requisitos (1., 2., 3., etc.)
-
-### 5. No-Goals (Fuera de Alcance)
+### 4. No-Goals (Fuera de Alcance)
 - **Documento de referencia:** `prd-prod.md`
-- **Formato:** Sección con `## 5. No-Goals (Fuera de Alcance)`
+- **Formato:** Sección con `## 4. No-Goals (Fuera de Alcance)`
 - Indica claramente qué NO incluirá esta funcionalidad para gestionar el alcance
 - Usa listas con viñetas para cada no-goal
 
-### 6. Consideraciones de Diseño
+### 5. Consideraciones de Diseño
 - **Documento de referencia:** `prd-design.md`
-- **Formato:** Sección con `## 6. Consideraciones de Diseño`
+- **Formato:** Sección con `## 5. Consideraciones de Diseño`
 - Enlaces a mockups, descripción de requisitos UI/UX, o mención de componentes/estilos relevantes si aplica
 - Usa formato de enlaces Markdown: `[texto del enlace](URL)`
 
-### 7. Consideraciones Técnicas
-- **Documento de referencia:** `prd-tech.md`
-- **Formato:** Sección con `## 7. Consideraciones Técnicas`
-- Menciona restricciones técnicas conocidas, dependencias o sugerencias (ej: "Debe integrarse con el módulo Auth existente")
-- Usa `código` para nombres de módulos, tecnologías, o componentes técnicos
-
-### 8. Métricas de Éxito
+### 6. Métricas de Éxito
 - **Documento de referencia:** `prd-prod.md`
-- **Formato:** Sección con `## 8. Métricas de Éxito`
+- **Formato:** Sección con `## 6. Métricas de Éxito`
 - ¿Cómo se medirá el éxito de esta funcionalidad? (ej: "Aumentar el engagement de usuarios en un 10%", "Reducir tickets de soporte relacionados con X")
 - Usa listas con viñetas para cada métrica
 
-### 9. Riesgos y Mitigadores
+### 7. Riesgos y Mitigadores
 - **Documento de referencia:** `prd-prod.md`
-- **Formato:** Sección con `## 9. Riesgos y Mitigadores`
+- **Formato:** Sección con `## 7. Riesgos y Mitigadores`
 - Lista cualquier riesgo relevante, ya sea de valor, usabilidad, técnico o de negocio, y sus mitigadores
 - Formato sugerido: Para cada riesgo, incluye el riesgo y su mitigador correspondiente
 
-### 10. Preguntas Abiertas
+### 8. Preguntas Abiertas
 - **Documento de referencia:** `prd-prod.md`
-- **Formato:** Sección con `## 10. Preguntas Abiertas`
+- **Formato:** Sección con `## 8. Preguntas Abiertas`
 - Lista cualquier pregunta pendiente o área que necesite mayor clarificación
 - Usa listas con viñetas para cada pregunta
 
@@ -206,7 +184,7 @@ Asume que el lector principal del PRD es un **desarrollador junior**. Por lo tan
 1. **NO** comiences a implementar el PRD
 2. **Asegúrate** de hacer preguntas clarificadoras al usuario antes de generar el PRD
 3. **Toma** las respuestas del usuario a las preguntas clarificadoras y mejora el PRD con esa información
-4. **Consulta siempre** los 3 documentos de referencia (`prd-prod.md`, `prd-tech.md`, `prd-design.md`) para seguir las reglas específicas de cada sección
+4. **Consulta siempre** los 2 documentos de referencia (`prd-prod.md`, `prd-design.md`) para seguir las reglas específicas de cada sección
 5. **Usa** el entendimiento del código del repositorio de Billionhands como referencia principal para el contexto del producto
 6. **Mantén** un formato consistente y profesional
 7. **Escribe** todos los documentos en español

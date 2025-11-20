@@ -5,7 +5,7 @@ Este documento contiene las reglas y guías para la creación de PRDs desde la p
 
 ## Reglas
 
-### Secciones 1, 2, 3, 5, 8, 9, 10: Perspectiva de Producto
+### Secciones 1, 2, 3, 4, 5, 6, 7, 8: Perspectiva de Producto
 
 Aplica el sentido común de un Product Manager como Marty Cagan para rellenar estas secciones de manera simple, directa y sin florituras.
 
@@ -31,22 +31,22 @@ Aplica el sentido común de un Product Manager como Marty Cagan para rellenar es
 - Enfócate en el valor para el usuario, no en las características técnicas
 - Prioriza las user stories más importantes
 
-### Sección 5: No-Goals (Fuera de Alcance)
+### Sección 4: No-Goals (Fuera de Alcance)
 - Sé explícito sobre qué NO se incluirá
 - Esto ayuda a gestionar expectativas y mantener el foco
 - Lista los no-goals de forma clara y directa
 
-### Sección 8: Métricas de Éxito
+### Sección 6: Métricas de Éxito
 - Define métricas específicas y medibles
 - Incluye métricas de negocio y de usuario
 - Establece valores objetivo claros (ej: "Aumentar X en un Y%")
 
-### Sección 9: Riesgos y Mitigadores
+### Sección 7: Riesgos y Mitigadores
 - Identifica riesgos reales, no hipotéticos
 - Para cada riesgo, propón un mitigador concreto
 - Sé honesto sobre los riesgos, especialmente los técnicos y de negocio
 
-### Sección 10: Preguntas Abiertas
+### Sección 8: Preguntas Abiertas
 - Lista solo las preguntas críticas que necesitan respuesta
 - Evita preguntas obvias o que ya tienen respuesta
 - Prioriza las preguntas que bloquean el progreso

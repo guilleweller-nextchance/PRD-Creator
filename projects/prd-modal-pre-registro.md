@@ -20,11 +20,7 @@ Este proyecto busca implementar un modal que aparezca estratégicamente después
 - Como usuario no registrado, quiero que el modal aparezca solo una vez por sesión, para que no me interrumpa repetidamente
 - Como usuario no registrado, quiero ver un mensaje claro sobre los beneficios del registro, para tomar una decisión informada sobre si registrarme
 
-## 4. Requisitos Funcionales
-
-Hola mundo
-
-## 5. No-Goals (Fuera de Alcance)
+## 4. No-Goals (Fuera de Alcance)
 
 - El modal no debe aparecer más de una vez por sesión de usuario
 - El modal no debe bloquear completamente la navegación (debe poder cerrarse con X)
@@ -32,22 +28,18 @@ Hola mundo
 - No se implementarán animaciones complejas o efectos de partículas (solo animaciones sutiles)
 - No se personalizará el contenido del modal según el contexto específico del usuario en esta versión
 
-## 6. Consideraciones de Diseño
+## 5. Consideraciones de Diseño
 
 Graphic Design is my passion
 
-## 7. Consideraciones Técnicas
-
-Hola mundo
-
-## 8. Métricas de Éxito
+## 6. Métricas de Éxito
 
 - Aumento en la tasa de registro de usuarios que ven el modal vs usuarios que no lo ven
 - Porcentaje de usuarios que hacen clic en "Registrarse" desde el modal
 - Reducción en el tiempo promedio hasta el primer registro después de interactuar con la plataforma
 - Tasa de cierre del modal (usuarios que lo cierran sin registrarse) para entender si el mensaje es efectivo
 
-## 9. Riesgos y Mitigadores
+## 7. Riesgos y Mitigadores
 
 - **Riesgo:** El modal puede ser percibido como intrusivo y generar fricción negativa
   - **Mitigador:** Aparecer solo después de que el usuario haya demostrado interés (votando varias veces) y permitir cierre fácil con X
@@ -61,7 +53,7 @@ Hola mundo
 - **Riesgo:** La animación sutil puede no ser lo suficientemente llamativa para captar la atención
   - **Mitigador:** Asegurar que el diseño visual y el copy sean lo suficientemente atractivos incluso con animación sutil
 
-## 10. Preguntas Abiertas
+## 8. Preguntas Abiertas
 
 - ¿Cuál es el número exacto de acciones (votos) que debe realizar el usuario antes de que aparezca el modal?
 - ¿Debe el modal aparecer en todas las páginas o solo en páginas específicas (ej: después de votar en un ranking)?
