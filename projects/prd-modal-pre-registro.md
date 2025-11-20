@@ -30,7 +30,13 @@ Este proyecto busca implementar un modal que aparezca estratégicamente después
 
 ## 5. Consideraciones de Diseño
 
-Graphic Design is my passion
+El modal debe aparecer de forma natural después de que el usuario haya votado varias veces, presentándose como el siguiente paso lógico en su experiencia, no como una interrupción. El usuario debe poder entender de un vistazo qué beneficios obtendrá al registrarse: guardar rankings favoritos, acumular puntos y personalizar su experiencia. Estos beneficios deben comunicarse de forma visual y textual clara, priorizando 2-3 beneficios clave para evitar sobrecargar al usuario.
+
+El diseño debe optimizarse para el caso de uso más común: un usuario que ha demostrado interés votando sin registro. Toda la información necesaria debe estar visible en una sola vista, sin requerir pasos adicionales o navegación. El modal debe aparecer con una animación sutil que indique su presencia, y todas las interacciones (hover, clic, cierre) deben proporcionar feedback visual inmediato.
+
+Si el usuario no está interesado en registrarse en ese momento, debe poder cerrar el modal fácilmente mediante un botón X claramente visible, permitiéndole continuar usando la plataforma sin fricción. El diseño debe mantener la consistencia visual y de interacción con el resto de Billionhands, usando componentes y estilos existentes cuando sea posible.
+
+El alcance se limita a un modal simple con mensaje de beneficios y CTA de registro, sin variaciones personalizadas o funcionalidades adicionales fuera del scope definido.
 
 ## 6. Métricas de Éxito
 
