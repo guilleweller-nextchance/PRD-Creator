@@ -1,0 +1,27 @@
+# Ignorar carpetas ditto-* (repos de tecnología que solo se leen)
+../ditto-api/
+../ditto-infrastructure/
+../ditto-webapp/
+ditto-api/
+ditto-infrastructure/
+ditto-webapp/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
