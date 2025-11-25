@@ -1,0 +1,178 @@
+# PRD Creator - Reglas y Contexto del Proyecto
+
+## Propósito del Proyecto
+Este es un sistema para crear y gestionar PRDs (Product Requirements Documents) de manera estructurada. El proyecto organiza la información en conocimiento base y documentos de requisitos.
+
+## Estructura del Proyecto
+- `how-to/`: Contiene guías y reglas para trabajar con proyectos
+- `projects/`: Contiene los documentos PRD generados como archivos Markdown (`.md`) con formato `prd-{nombre-proyecto-resumido}.md`
+
+## Qué se Espera en este Proyecto
+
+### Al trabajar con Proyectos
+- Cada proyecto debe tener su propia carpeta en `projects/`
+- Consulta `how-to/howto-project.md` para las reglas de gestión de proyectos
+
+### Cómo Obtener el Project Brief de un Proyecto de Linear
+
+Cuando necesites obtener el Project Brief asociado a un proyecto de Linear, sigue este proceso:
+
+1. **Obtener el proyecto de Linear:**
+   
+   **IMPORTANTE:** El slug en la URL de Linear (ej: `modal-pre-registro-3eb4856ee94c`) NO es el ID real del proyecto. Debes buscar el proyecto usando uno de estos métodos:
+   
+   - **Método 1 (Recomendado):** Usa `mcp_linear_list_projects` sin parámetros o con un `query` que contenga palabras clave del nombre del proyecto. Busca en los resultados el proyecto que coincida con la URL o nombre proporcionado y guarda su `id` (formato UUID, ej: `b90115d9-f493-4b4c-aa96-35df282dc03f`)
+   
+   - **Método 2:** Si conoces el nombre exacto del proyecto, usa `mcp_linear_get_project` con el nombre. **Nota:** Si hay múltiples proyectos con el mismo nombre, `mcp_linear_get_project` puede devolver uno diferente. En ese caso, usa el Método 1 para ver todos los proyectos y seleccionar el correcto.
+   
+   - **Método 3:** Si tienes el ID real del proyecto (UUID), usa `mcp_linear_get_project` directamente con ese ID.
+
+2. **Listar documentos del proyecto:**
+   - Una vez tengas el `id` real del proyecto (UUID), usa `mcp_linear_list_documents` con el parámetro `projectId` igual al `id` del proyecto
+   - Esto te devolverá todos los documentos asociados al proyecto, incluyendo el "Project Brief"
+   - El Project Brief aparece en el campo `content` del documento con título "Project Brief"
+
+3. **Obtener el contenido del Project Brief:**
+   - El Project Brief ya está disponible en el campo `content` del resultado de `mcp_linear_list_documents`
+   - Si necesitas más detalles, puedes usar `mcp_linear_get_document` con el `id` del documento
+
+**Nota importante:** El Project Brief NO está en la descripción del proyecto (`description`), sino que es un documento separado asociado al proyecto. Siempre debes usar `mcp_linear_list_documents` para encontrarlo.
+
+**Comandos MCP usados:**
+- `mcp_linear_list_projects` - Para buscar proyectos por nombre o listar todos
+- `mcp_linear_get_project` - Para obtener un proyecto específico por ID o nombre
+- `mcp_linear_list_documents` - Para listar documentos de un proyecto (incluye Project Brief en `content`)
+- `mcp_linear_get_document` - Para obtener detalles completos de un documento específico
+
+### Al generar PRDs
+- Los PRDs deben generarse como archivos Markdown (`.md`) directamente en `projects/`
+- El nombre del archivo debe seguir el formato: `prd-{nombre-proyecto-resumido}.md` (ej: `prd-modal-pre-registro.md`)
+- Deben ser documentos completos y estructurados
+- Consulta `how-to/howto-prd.md` para las reglas específicas de creación de PRDs
+
+## Reglas Generales
+- Mantén la estructura de carpetas establecida
+- Sigue las guías en `how-to/` para cualquier tarea relacionada
+- Usa el entendimiento del código del repositorio de Billionhands como referencia principal para el contexto del producto
+- Los documentos deben estar en español
+- Mantén un formato consistente y profesional en todos los documentos
+
+## Flujos de Trabajo
+
+### Detección de Flujo
+
+El sistema tiene dos flujos principales que se activan según el contexto o comando del usuario:
+
+1. **Crear Nuevo Proyecto** (`new_project`):
+   - Se activa cuando el usuario dice: "quiero crear un nuevo proyecto", "crear proyecto", "new project", o usa el shortcut `new_project`
+   - Ejecuta el flujo documentado en `how-to/howto-project.md`
+
+2. **Crear PRD para Proyecto Existente** (`new_prd`):
+   - Se activa cuando el usuario proporciona:
+     - Una URL de proyecto de Linear (ej: `https://linear.app/.../project/...`)
+     - Un nombre de proyecto
+     - Contexto sobre un proyecto existente
+     - O usa el shortcut `new_prd`
+   - Ejecuta el flujo documentado en `how-to/howto-prd.md`
+
+---
+
+## Flujo 1: Crear un Nuevo Proyecto
+
+**Activadores:** "quiero crear un nuevo proyecto", "crear proyecto", "new project", shortcut `new_project`
+
+Cuando el usuario solicite crear un nuevo proyecto, debes seguir este flujo de manera estricta:
+
+### Paso 1: Consultar y Seguir howto-project.md
+1. **Consulta `how-to/howto-project.md`** y sigue todas sus reglas al pie de la letra
+2. Asegúrate de cumplir todos los requisitos y pasos definidos en ese documento
+3. No procedas al siguiente paso hasta que consideres que todas las reglas de `howto-project.md` se han cumplido completamente
+
+### Paso 2: Confirmación para Crear Proyecto en Linear
+1. Una vez que hayas verificado que `howto-project.md` se ha cumplido, **debes pedir confirmación explícita al usuario** antes de crear el proyecto en Linear
+2. Presenta un resumen de lo que se va a crear y espera la confirmación del usuario
+3. Solo después de recibir confirmación explícita, procede a crear el proyecto en Linear
+
+### Reglas del Flujo
+- **NUNCA** omitas ningún paso del flujo
+- **SIEMPRE** pide confirmación explícita antes de crear o actualizar en Linear
+- **SIEMPRE** consulta y sigue los documentos `how-to/` antes de proceder
+- Mantén una comunicación clara y transparente con el usuario en cada paso
+
+---
+
+## Flujo 2: Crear PRD para un Proyecto Existente
+
+**Activadores:** URL de proyecto de Linear, nombre de proyecto, contexto de proyecto, shortcut `new_prd`
+
+Cuando el usuario solicite crear un PRD para un proyecto existente, debes seguir este flujo de manera estricta:
+
+### Paso 1: Localizar el Proyecto en Linear
+
+1. **Si el usuario proporciona una URL de Linear:**
+   - **IMPORTANTE:** El slug en la URL (ej: `modal-pre-registro-3eb4856ee94c`) NO es el ID real del proyecto
+   - Extrae el nombre del proyecto del slug (la parte antes del último guion, ej: `modal-pre-registro`)
+   - Usa `mcp_linear_list_projects` con un `query` que contenga palabras clave del nombre extraído
+   - Busca en los resultados el proyecto que coincida con la URL proporcionada
+   - Guarda el `id` real del proyecto (formato UUID, ej: `b90115d9-f493-4b4c-aa96-35df282dc03f`)
+
+2. **Si el usuario proporciona un nombre de proyecto:**
+   - Usa `mcp_linear_list_projects` con un `query` para buscar el proyecto por nombre
+   - Si hay múltiples resultados, revisa los detalles para identificar el proyecto correcto
+   - Alternativamente, usa `mcp_linear_get_project` con el nombre, pero ten en cuenta que puede haber ambigüedad si hay múltiples proyectos con el mismo nombre
+
+3. **Si el usuario proporciona contexto sobre un proyecto:**
+   - Intenta identificar el proyecto usando `mcp_linear_list_projects` con un query relevante
+   - Si hay ambigüedad, pregunta al usuario para clarificar
+
+4. **Guarda el `id` del proyecto encontrado** (debe ser un UUID) para usarlo en los siguientes pasos
+
+### Paso 2: Seguir el Proceso de Creación de PRD
+
+Una vez localizado el proyecto, **debes seguir estrictamente el proceso documentado en `how-to/howto-prd.md`**:
+
+1. **Obtener Contexto del Proyecto** (Paso 1 de `howto-prd.md`):
+   - Obtener el Project Brief del proyecto usando el proceso documentado en `.prdCreatorRules`
+   - **Asegurar código actualizado:** Ejecuta `prd-creator/updateAll.sh` para actualizar los repositorios antes de revisar el código
+   - **Verificación Sistemática del Estado Actual (OBLIGATORIO):**
+     - Extraer conceptos clave del Project Brief (tecnologías, acciones, funcionalidades)
+     - Para cada concepto, verificar en el código usando `grep` y `codebase_search`
+     - Verificar configuraciones, componentes, composables relacionados
+     - Documentar hallazgos: ✅ Lo que SÍ existe, ❌ Lo que NO existe, ⚠️ Lo que existe parcialmente
+     - **Compartir hallazgos con el usuario antes de continuar**
+     - Si hay discrepancias entre Project Brief y código, **preguntar al usuario** para clarificar
+     - **NUNCA asumir el estado de algo sin verificarlo primero en el código**
+   - Revisar el código del repositorio de Billionhands para obtener un entendimiento completo del producto desde la perspectiva de Product Manager y Usuario final (consulta `howto-prd.md` para más detalles sobre el enfoque)
+   - Revisar información del proyecto en Linear
+
+2. **Hacer Preguntas Clarificadoras** (Paso 2 de `howto-prd.md`):
+   - **IMPORTANTE:** Antes de escribir el PRD, **DEBES** hacer preguntas clarificadoras al usuario
+   - Proporciona opciones en listas con letras/números para facilitar las respuestas
+   - Consulta `prd-prod.md` para las reglas específicas sobre qué preguntar
+
+3. **Generar el PRD** (Paso 3 de `howto-prd.md`):
+   - Basándote en el Project Brief, respuestas del usuario, entendimiento del código del repositorio y reglas de los 2 documentos de referencia
+   - Genera un PRD completo siguiendo la estructura definida en `howto-prd.md`
+   - **Cada sección debe seguir las reglas de su documento de referencia correspondiente:**
+     - Secciones 1, 2, 3, 4, 5, 6, 7, 8 → `prd-prod.md`
+     - Sección 5 → `prd-design.md`
+
+4. **Guardar el PRD localmente**:
+   - Guarda el PRD directamente en `projects/` con el formato `prd-{nombre-proyecto-resumido}.md`
+   - Usa formato Markdown (`.md`)
+   - El nombre del proyecto debe estar resumido y en minúsculas con guiones (ej: `modal-pre-registro` → `prd-modal-pre-registro.md`)
+
+5. **Actualizar el PRD en Linear**:
+   - Una vez que el PRD esté completo y guardado localmente, **debes pedir confirmación explícita al usuario** antes de actualizar la descripción del proyecto en Linear con el contenido del PRD generado
+   - Presenta un resumen del PRD que se va a subir y espera la confirmación del usuario
+   - Solo después de recibir confirmación explícita, procede a actualizar la descripción del proyecto en Linear
+
+### Reglas del Flujo
+- **NUNCA** omitas ningún paso del flujo
+- **SIEMPRE** localiza primero el proyecto en Linear antes de proceder
+- **SIEMPRE** obtén el Project Brief antes de generar el PRD
+- **SIEMPRE** haz preguntas clarificadoras antes de escribir el PRD
+- **SIEMPRE** consulta y sigue los documentos `how-to/` antes de proceder
+- **NO** comiences a implementar el PRD, solo documenta los requisitos
+- Mantén una comunicación clara y transparente con el usuario en cada paso
+
