@@ -32,17 +32,23 @@ fi
 
 case "$1" in
     push)
-        echo "📤 Subiendo cambios al repositorio..."
+        echo "📤 Subiendo cambios al repositorio PRD-Creator..."
         
-        # Verificar si hay cambios (incluyendo archivos borrados)
-        # git add -A detecta cambios, nuevos archivos y archivos borrados
-        if git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --deleted)" ]; then
-            echo "ℹ️  No hay cambios para subir."
+        # Verificar si hay cambios usando git status --porcelain
+        # Esto detecta: modificados, nuevos, borrados, renombrados, etc.
+        # Es más confiable que múltiples verificaciones separadas
+        CHANGES=$(git status --porcelain)
+        if [ -z "$CHANGES" ]; then
+            echo "ℹ️  No hay cambios para subir en el repositorio PRD-Creator."
+            echo ""
+            echo "💡 Nota: Si ves archivos marcados como modificados en tu IDE,"
+            echo "   pueden pertenecer al repositorio padre (billionhands)."
+            echo "   Este script solo gestiona el repositorio PRD-Creator."
             exit 0
         fi
         
         # Mostrar estado
-        echo "📋 Estado actual:"
+        echo "📋 Estado actual del repositorio PRD-Creator:"
         git status --short
         
         # Agregar todos los cambios, incluyendo archivos borrados
