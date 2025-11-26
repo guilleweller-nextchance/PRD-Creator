@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script para gestionar el repositorio PRD-Creator
-# Uso: ./prd.sh push|get
+# Uso: ./prd.sh push|pull
 
 set -e
 
@@ -51,7 +51,7 @@ case "$1" in
         echo "✅ Cambios subidos exitosamente!"
         ;;
         
-    get)
+    pull)
         echo "📥 Obteniendo cambios del repositorio..."
         git pull
         echo "✅ Repositorio actualizado!"
@@ -63,11 +63,11 @@ case "$1" in
         ;;
         
     *)
-        echo "Uso: $0 {push|get|status}"
+        echo "Uso: $0 {push|pull|status}"
         echo ""
         echo "Comandos:"
         echo "  push [mensaje]  - Sube cambios al repositorio (opcional: mensaje de commit)"
-        echo "  get             - Obtiene cambios del repositorio"
+        echo "  pull            - Obtiene cambios del repositorio"
         echo "  status          - Muestra el estado del repositorio"
         exit 1
         ;;
