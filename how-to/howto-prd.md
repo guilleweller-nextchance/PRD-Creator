@@ -38,6 +38,15 @@ Antes de comenzar a crear el PRD, debes obtener toda la información disponible:
    - Sigue el proceso documentado en `../.prdCreatorRules` para obtener el Project Brief
    - El Project Brief contiene información clave sobre el proyecto: qué queremos hacer, para qué, hipótesis de valor, recursos necesarios
 
+1.2. **Leer el Glosario de Términos de Notion:**
+   - Acceder al glosario de términos de la empresa: `https://www.notion.so/nextchance/Glosario-de-T-rminos-2b79dea2e40980b5b778c96ca3f37da2`
+   - Usar `mcp_Notion_notion-fetch` para obtener el contenido del documento
+   - Este documento ayuda a:
+     - Usar la terminología correcta de la empresa en el PRD
+     - Tener mejor contexto sobre los términos específicos del negocio
+     - Aunque te apoyes principalmente en el código de los dittos, las respuestas del usuario y el Project Brief, este glosario complementa y refuerza el uso de la terminología adecuada
+   - **Nota:** Aunque el documento pueda estar vacío actualmente, es importante consultarlo para mantener consistencia en la terminología
+
 1.5. **Leer Iniciativas y KPIs de Notion (OBLIGATORIO):**
    - Acceder al documento de Notion de iniciativas Q4 25 / Q1 26: `https://www.notion.so/nextchance/Iniciativas-Q4-25-Q1-26-2b79dea2e409805fb86ef4f4ff0d0587`
    - Usar `mcp_Notion_notion-fetch` para obtener el contenido del documento
