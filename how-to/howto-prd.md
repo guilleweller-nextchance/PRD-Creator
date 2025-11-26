@@ -38,6 +38,15 @@ Antes de comenzar a crear el PRD, debes obtener toda la información disponible:
    - Sigue el proceso documentado en `../.prdCreatorRules` para obtener el Project Brief
    - El Project Brief contiene información clave sobre el proyecto: qué queremos hacer, para qué, hipótesis de valor, recursos necesarios
 
+1.5. **Leer Iniciativas y KPIs de Notion (OBLIGATORIO):**
+   - Acceder al documento de Notion de iniciativas Q4 25 / Q1 26: `https://www.notion.so/nextchance/Iniciativas-Q4-25-Q1-26-2b79dea2e409805fb86ef4f4ff0d0587`
+   - Usar `mcp_Notion_notion-fetch` para obtener el contenido del documento
+   - Extraer la tabla con las iniciativas (1-4) y sus KPIs asociados
+   - Guardar esta información para usarla posteriormente en:
+     - La pregunta de selección de iniciativa (Paso 2)
+     - La alineación de métricas en la Sección 6 del PRD (Paso 3)
+   - **Nota:** Si el documento de Notion no está disponible, el flujo debe continuar sin bloquearse, pero se debe informar al usuario
+
 2. **Revisar el código del repositorio de Billionhands:**
    - **Asegurar código actualizado:** Ejecuta `prd-creator/updateAll.sh` para actualizar los repositorios `ditto-webapp`, `ditto-api` y `ditto-infrastructure` a su última versión antes de comenzar la revisión
    - **Objetivo:** Revisa el código del repositorio de Billionhands para obtener un entendimiento completo de cómo funciona el producto actualmente desde la perspectiva de **Product Manager** y **Usuario final**
@@ -102,6 +111,17 @@ Antes de hacer preguntas clarificadoras o generar el PRD, verifica que tienes co
 **Si alguna casilla no está verificada, DEBES preguntar al usuario o verificar en el código antes de continuar.**
 
 **IMPORTANTE:** Antes de escribir el PRD, **DEBES** hacer preguntas clarificadoras al usuario para recopilar suficiente detalle. El objetivo es entender el "qué" y el "por qué" de la funcionalidad, no necesariamente el "cómo" (que el desarrollador determinará).
+
+**PRIMERA PREGUNTA OBLIGATORIA - Selección de Iniciativa:**
+- **DEBES** hacer esta pregunta PRIMERO, antes que cualquier otra pregunta clarificadora
+- Pregunta: "¿A qué iniciativa pertenece este PRD?"
+- Formato: Presenta las 4 iniciativas extraídas de Notion con opciones A, B, C, D
+  - Opción A: Iniciativa 1 - [Nombre y descripción breve]
+  - Opción B: Iniciativa 2 - [Nombre y descripción breve]
+  - Opción C: Iniciativa 3 - [Nombre y descripción breve]
+  - Opción D: Iniciativa 4 - [Nombre y descripción breve]
+- Guarda la iniciativa seleccionada por el usuario (esta información NO se guardará en Linear, solo se usará para contexto interno y alineación de métricas)
+- Si no se pudieron leer las iniciativas de Notion, pregunta al usuario directamente qué iniciativa corresponde
 
 **Formato de preguntas:**
 - Proporciona opciones en listas con letras/números para que el usuario pueda responder fácilmente con sus selecciones
@@ -224,6 +244,11 @@ El PRD debe seguir esta estructura de formato Markdown:
 - **Formato:** Sección con `## 6. 📊 Métricas de Éxito`
 - ¿Cómo se medirá el éxito de esta funcionalidad? (ej: "Aumentar el engagement de usuarios en un 10%", "Reducir tickets de soporte relacionados con X")
 - Usa listas con viñetas para cada métrica
+- **Alineación con KPIs de la Iniciativa (opcional pero recomendado):**
+  - Si el usuario seleccionó una iniciativa en el Paso 2, incluye los KPIs de esa iniciativa como referencia
+  - Las métricas propuestas deben alinearse (no obligatorio) con los KPIs de la iniciativa seleccionada cuando sea posible
+  - Mantén flexibilidad para incluir métricas específicas del PRD que puedan no estar directamente en los KPIs de la iniciativa
+  - Formato sugerido: Incluir una subsección o nota que mencione la alineación con los KPIs de la iniciativa, seguida de las métricas específicas del PRD
 
 ### 7. Riesgos y Mitigadores
 - **Documento de referencia:** `prd-prod.md`

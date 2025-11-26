@@ -133,6 +133,11 @@ Una vez localizado el proyecto, **debes seguir estrictamente el proceso document
 
 1. **Obtener Contexto del Proyecto** (Paso 1 de `howto-prd.md`):
    - Obtener el Project Brief del proyecto usando el proceso documentado en `.prdCreatorRules`
+   - **Leer Iniciativas y KPIs de Notion (OBLIGATORIO):**
+     - Acceder al documento de Notion: `https://www.notion.so/nextchance/Iniciativas-Q4-25-Q1-26-2b79dea2e409805fb86ef4f4ff0d0587`
+     - Usar `mcp_Notion_notion-fetch` para obtener el contenido del documento
+     - Extraer la tabla con las iniciativas (1-4) y sus KPIs asociados
+     - Guardar esta información en contexto para usarla en pasos posteriores (especialmente para alinear métricas)
    - **Asegurar código actualizado:** Ejecuta `prd-creator/updateAll.sh` para actualizar los repositorios antes de revisar el código
    - **Verificación Sistemática del Estado Actual (OBLIGATORIO):**
      - Extraer conceptos clave del Project Brief (tecnologías, acciones, funcionalidades)
@@ -147,6 +152,10 @@ Una vez localizado el proyecto, **debes seguir estrictamente el proceso document
 
 2. **Hacer Preguntas Clarificadoras** (Paso 2 de `howto-prd.md`):
    - **IMPORTANTE:** Antes de escribir el PRD, **DEBES** hacer preguntas clarificadoras al usuario
+   - **PRIMERA PREGUNTA OBLIGATORIA:** "¿A qué iniciativa pertenece este PRD?"
+     - Presenta las 4 iniciativas extraídas de Notion con opciones A, B, C, D
+     - Formato: Lista cada iniciativa con su nombre y descripción breve
+     - Guarda la iniciativa seleccionada por el usuario (esta información NO se guardará en Linear, solo se usará para contexto interno y alineación de métricas)
    - Proporciona opciones en listas con letras/números para facilitar las respuestas
    - Consulta `prd-prod.md` para las reglas específicas sobre qué preguntar
 
@@ -156,6 +165,10 @@ Una vez localizado el proyecto, **debes seguir estrictamente el proceso document
    - **Cada sección debe seguir las reglas de su documento de referencia correspondiente:**
      - Secciones 1, 2, 3, 4, 5, 6, 7, 8 → `prd-prod.md`
      - Sección 5 → `prd-design.md`
+   - **En la Sección 6 (Métricas de Éxito):**
+     - Si el usuario seleccionó una iniciativa, incluye los KPIs de esa iniciativa como referencia
+     - Las métricas propuestas deben alinearse (no obligatorio) con los KPIs de la iniciativa seleccionada
+     - Mantén flexibilidad para métricas específicas del PRD que puedan no estar en los KPIs de la iniciativa
 
 4. **Guardar el PRD localmente**:
    - Guarda el PRD directamente en `projects/` con el formato `prd-{nombre-proyecto-resumido}.md`
