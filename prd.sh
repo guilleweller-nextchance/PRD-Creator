@@ -28,9 +28,15 @@ case "$1" in
         # Pedir mensaje de commit si no se proporciona
         if [ -z "$2" ]; then
             echo ""
-            read -p "💬 Mensaje de commit: " commit_message
+            # Obtener el último mensaje de commit como valor por defecto
+            last_commit_message=$(git log -1 --pretty=%s 2>/dev/null || echo "")
+            if [ -z "$last_commit_message" ]; then
+                last_commit_message="Actualización automática"
+            fi
+            echo "💡 Último mensaje: $last_commit_message"
+            read -p "💬 Mensaje de commit [Enter para usar el anterior]: " commit_message
             if [ -z "$commit_message" ]; then
-                commit_message="Actualización automática"
+                commit_message="$last_commit_message"
             fi
         else
             commit_message="$2"
