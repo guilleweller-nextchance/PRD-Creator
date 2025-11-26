@@ -132,6 +132,12 @@ Antes de hacer preguntas clarificadoras o generar el PRD, verifica que tienes co
 - Guarda la iniciativa seleccionada por el usuario (esta información NO se guardará en Linear, solo se usará para contexto interno y alineación de métricas)
 - Si no se pudieron leer las iniciativas de Notion, pregunta al usuario directamente qué iniciativa corresponde
 
+**PREGUNTA OPCIONAL - Propuesta de Producto:**
+- **OPCIONAL:** Después de la pregunta de iniciativa y las preguntas de afinamiento, pregunta al usuario: "¿Te gustaría añadir una propuesta de producto a este PRD?"
+- Si el usuario responde afirmativamente, solicita la propuesta de producto
+- Guarda la propuesta proporcionada para incluirla en la Sección 9 del PRD (opcional)
+- Si el usuario no proporciona una propuesta, NO incluyas la Sección 9 en el PRD
+
 **Formato de preguntas:**
 - Proporciona opciones en listas con letras/números para que el usuario pueda responder fácilmente con sus selecciones
 - Adapta las preguntas según el prompt inicial y el Project Brief obtenido
@@ -199,6 +205,10 @@ El PRD debe seguir esta estructura de formato Markdown:
 ## 8. ❓ Preguntas Abiertas
 
 [Contenido de preguntas abiertas]
+
+## 9. 💡 Propuesta de Producto
+
+[Contenido de la propuesta de producto - OPCIONAL: Solo incluir si el usuario proporcionó una propuesta]
 ```
 
 **Reglas de formato:**
@@ -217,6 +227,7 @@ El PRD debe seguir esta estructura de formato Markdown:
   - `## 6. 📊 Métricas de Éxito` - Para la sección de métricas
   - `## 7. ⚠️ Riesgos y Mitigadores` - Para la sección de riesgos (usa ⚠️ antes de cada riesgo, ✅ antes de cada mitigador)
   - `## 8. ❓ Preguntas Abiertas` - Para la sección de preguntas abiertas
+  - `## 9. 💡 Propuesta de Producto` - Para la sección de propuesta de producto (OPCIONAL: Solo incluir si el usuario proporcionó una propuesta)
 
 ### 1. Introducción/Resumen
 - **Documento de referencia:** `prd-prod.md`
@@ -277,6 +288,13 @@ El PRD debe seguir esta estructura de formato Markdown:
 - **Formato:** Sección con `## 8. ❓ Preguntas Abiertas`
 - Lista cualquier pregunta pendiente o área que necesite mayor clarificación
 - Usa listas con viñetas para cada pregunta
+
+### 9. Propuesta de Producto (OPCIONAL)
+- **Documento de referencia:** `prd-prod.md`
+- **Formato:** Sección con `## 9. 💡 Propuesta de Producto`
+- **OPCIONAL:** Solo incluir esta sección si el usuario proporcionó una propuesta de producto durante las preguntas clarificadoras
+- Incluye la propuesta de producto proporcionada por el usuario
+- Formatea el contenido de manera clara y estructurada
 
 ## Audiencia Objetivo
 

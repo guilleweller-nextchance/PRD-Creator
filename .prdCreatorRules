@@ -156,6 +156,10 @@ Una vez localizado el proyecto, **debes seguir estrictamente el proceso document
      - Presenta las 4 iniciativas extraídas de Notion con opciones A, B, C, D
      - Formato: Lista cada iniciativa con su nombre y descripción breve
      - Guarda la iniciativa seleccionada por el usuario (esta información NO se guardará en Linear, solo se usará para contexto interno y alineación de métricas)
+   - **PREGUNTA OPCIONAL - Propuesta de Producto:**
+     - Después de la pregunta de iniciativa y las preguntas de afinamiento, pregunta al usuario: "¿Te gustaría añadir una propuesta de producto a este PRD?"
+     - Si el usuario responde afirmativamente, solicita la propuesta de producto
+     - Guarda la propuesta proporcionada para incluirla en la Sección 9 del PRD (opcional)
    - Proporciona opciones en listas con letras/números para facilitar las respuestas
    - Consulta `prd-prod.md` para las reglas específicas sobre qué preguntar
 
@@ -165,6 +169,7 @@ Una vez localizado el proyecto, **debes seguir estrictamente el proceso document
    - **Cada sección debe seguir las reglas de su documento de referencia correspondiente:**
      - Secciones 1, 2, 3, 4, 5, 6, 7, 8 → `prd-prod.md`
      - Sección 5 → `prd-design.md`
+     - Sección 9 (opcional) → `prd-prod.md` - Solo incluir si el usuario proporcionó una propuesta de producto
    - **En la Sección 6 (Métricas de Éxito):**
      - Si el usuario seleccionó una iniciativa, incluye los KPIs de esa iniciativa como referencia
      - Las métricas propuestas deben alinearse (no obligatorio) con los KPIs de la iniciativa seleccionada
