@@ -135,9 +135,8 @@ Antes de hacer preguntas clarificadoras o generar el PRD, verifica que tienes co
 **PREGUNTA OPCIONAL - Propuesta de Producto:**
 - **OPCIONAL:** Después de la pregunta de iniciativa y las preguntas de afinamiento, pregunta al usuario: "¿Te gustaría añadir una propuesta de producto a este PRD?"
 - Si el usuario responde afirmativamente, solicita la propuesta de producto
-- Guarda la propuesta proporcionada para desarrollarla en la Sección 9 del PRD (opcional)
-- **IMPORTANTE:** La propuesta NO debe copiarse literalmente del usuario, sino desarrollarse desde la perspectiva de producto siguiendo las reglas de este documento (`howto-prd.md`)
-- Si el usuario no proporciona una propuesta, NO incluyas la Sección 9 en el PRD
+- Guarda la propuesta proporcionada para usarla como contexto y valoración al generar el PRD
+- **IMPORTANTE:** La propuesta se utilizará para enriquecer y valorar el contenido del PRD (secciones 1-8), pero NO se creará una sección 9 separada. La propuesta debe integrarse en el contexto y consideración del PRD, no copiarse literalmente. Úsala para mejorar la calidad y profundidad de las secciones existentes
 
 **Formato de preguntas:**
 - Proporciona opciones en listas con letras/números para que el usuario pueda responder fácilmente con sus selecciones
@@ -165,7 +164,9 @@ Genera un PRD completo usando la estructura definida a continuación.
 
 ## Estructura del PRD
 
-El PRD generado debe incluir las siguientes secciones. **Cada sección debe seguir las reglas definidas en su documento de referencia correspondiente:**
+El PRD generado debe incluir las siguientes 8 secciones. **Cada sección debe seguir las reglas definidas en su documento de referencia correspondiente:**
+
+**IMPORTANTE:** Si el usuario proporcionó una propuesta de producto durante las preguntas clarificadoras, úsala como contexto y valoración para enriquecer las secciones 1-8, pero NO crees una sección 9 separada. La propuesta debe integrarse en el contexto y consideración del PRD.
 
 ### Formato Markdown del PRD
 
@@ -206,10 +207,6 @@ El PRD debe seguir esta estructura de formato Markdown:
 ## 8. ❓ Preguntas Abiertas
 
 [Contenido de preguntas abiertas]
-
-## 9. 💡 Propuesta de Producto
-
-[Contenido de la propuesta de producto - OPCIONAL: Solo incluir si el usuario proporcionó una propuesta]
 ```
 
 **Reglas de formato:**
@@ -228,7 +225,6 @@ El PRD debe seguir esta estructura de formato Markdown:
   - `## 6. 📊 Métricas de Éxito` - Para la sección de métricas
   - `## 7. ⚠️ Riesgos y Mitigadores` - Para la sección de riesgos (usa ⚠️ antes de cada riesgo, ✅ antes de cada mitigador)
   - `## 8. ❓ Preguntas Abiertas` - Para la sección de preguntas abiertas
-  - `## 9. 💡 Propuesta de Producto` - Para la sección de propuesta de producto (OPCIONAL: Solo incluir si el usuario proporcionó una propuesta)
 
 ### 1. Introducción/Resumen
 - **Documento de referencia:** `prd-prod.md`
@@ -290,14 +286,6 @@ El PRD debe seguir esta estructura de formato Markdown:
 - Lista cualquier pregunta pendiente o área que necesite mayor clarificación
 - Usa listas con viñetas para cada pregunta
 
-### 9. Propuesta de Producto (OPCIONAL)
-- **Documento de referencia:** `prd-prod.md`
-- **Formato:** Sección con `## 9. 💡 Propuesta de Producto`
-- **OPCIONAL:** Solo incluir esta sección si el usuario proporcionó una propuesta de producto durante las preguntas clarificadoras
-- **Desarrollo desde perspectiva de producto:** La propuesta NO debe copiarse literalmente del usuario, sino desarrollarse desde la perspectiva de producto siguiendo las reglas de este documento (`howto-prd.md`)
-- Estructura y desarrolla la propuesta de manera profesional, clara y bien formateada
-- Considera el contexto del producto, las reglas de negocio y la experiencia de usuario al desarrollar la propuesta
-- Formatea el contenido de manera clara y estructurada, manteniendo coherencia con el resto del PRD
 
 ## Audiencia Objetivo
 
