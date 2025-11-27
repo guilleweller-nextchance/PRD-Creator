@@ -44,7 +44,6 @@ Proporciona guías de alto nivel (nivel CDO) sobre el "cómo" del diseño, que s
 - Define métricas de éxito de diseño (UX KPIs) vinculadas al PRD (ej.: conversión, completion rate, time on task, error rate, recurrencia, etc.).
 - Incluye criterios de aceptación de diseño (Design Acceptance Criteria): cómo sabremos que el diseño cumple su función.
 - Formula una hipótesis de diseño clara y cómo se va a testear (A/B test, test con usuarios, funnels, etc.).
-- Siempre que sea posible, vincula los KPIs a eventos medibles en Amplitud.
 
 **5. Priorización y alcance**
 
